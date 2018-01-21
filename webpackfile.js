@@ -6,6 +6,8 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 })
 
+const DirectoryNamedWebpackPlugin = require('enhanced-resolve')
+
 module.exports = {
     entry: './src/index.js',
     devtool: 'source-map',
@@ -19,5 +21,20 @@ module.exports = {
             { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']}
         ]
     },
-    plugins: [HtmlWebpackPluginConfig]
+    resolve: {
+        alias: {
+            '~': path.resolve(__dirname, 'src')
+        },
+        modules: ["src", "node_modules"],
+        extensions: ['.js', '.scss'],
+        modules: [
+          'node_modules'
+        ],
+        //plugins: [
+        //    new DirectoryNamedWebpackPlugin()
+        //]
+    },
+    plugins: [
+        HtmlWebpackPluginConfig
+    ]
 }
