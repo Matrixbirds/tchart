@@ -1,5 +1,6 @@
 .container {
     margin: 0 auto;
+    text-align: center;
 }
 
 html,
@@ -7,4 +8,26 @@ body {
     margin: 0;
     width: 100%;
     height: 100%;
+}
+
+path.line {
+    fill: none;
+    stroke: #666;
+    stroke-width: 1.5px;
+}
+
+path.area {
+    fill: #e7e7e7;
+}
+
+.axis {
+    shape-rendering: cripsEdges;
+}
+
+.x.axis line {
+    stroke: #fff;
+}
+
+.x.axis .minor {
+    stroke-opacity: .5;
 }

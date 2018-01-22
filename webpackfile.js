@@ -18,7 +18,11 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-            { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']}
+            { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']},
+            {
+                test: /\.(pdf|csv|svg)$/,
+                loader: 'file-loader?name=[path][name].[ext]',
+            }
         ]
     },
     resolve: {
@@ -36,5 +40,15 @@ module.exports = {
     },
     plugins: [
         HtmlWebpackPluginConfig
-    ]
+    ],
+    devServer: {
+        contentBase: path.resolve(__dirname, 'dist'),
+        compress: true,
+        port: 8080,
+        proxy: {
+            "/api": {
+                target: "http://localhost:8080"
+            }
+        }
+    }
 }
