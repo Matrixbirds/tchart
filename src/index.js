@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
-import '~/scss/index.scss';
+import 'spectre.css/dist/spectre.css';
+import './scss/index.scss';
 const h = 360
 const w = 480
 const barWidth = 40
@@ -25,3 +26,5 @@ function ready (error, datapoints) {
         // .attr('r', 10)
         // .attr('fill', 'lightblue')
 }
+
+module.hot && module.hot.accept()

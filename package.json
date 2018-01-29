@@ -1,7 +1,7 @@
 {
     "scripts": {
-        "build": "babel src -d lib",
-        "start": "webpack-dev-server"
+        "build": "parcel build src/index.html --no-cache",
+        "start": "parcel ./src/index.html --no-cache"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
@@ -9,11 +9,13 @@
         "babel-loader": "^7.1.2",
         "babel-preset-env": "^1.6.1",
         "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
         "css-loader": "^0.28.9",
         "enhanced-resolve": "^4.0.0-beta.4",
         "html-webpack-plugin": "^2.30.1",
         "install": "^0.10.2",
         "node-sass": "^4.7.2",
+        "parcel-bundler": "^1.5.1",
         "sass-loader": "^6.0.6",
         "style-loader": "^0.19.1",
         "webpack": "^3.10.0",
@@ -22,6 +24,9 @@
     "dependencies": {
         "d3": "^4.12.2",
         "fast-csv": "^2.4.1",
-        "file-loader": "^1.1.6"
+        "file-loader": "^1.1.6",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "spectre.css": "^0.5.0"
     }
 }
